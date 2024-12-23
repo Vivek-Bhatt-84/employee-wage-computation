@@ -36,3 +36,8 @@ In this use-case, the program calculates wages of employee for a month.
 In this use-case, the program calculates wages of employee for a month based on certain conditions of days and hours.
 - Calculate Wages till a condition of total working hours or days is reached for a month .
 - Assume `100` hours and `20` days .
+
+
+
+### **Use-case 7: Reafector the code in classes and class variables**
+- In this use-case, the program is refactored into classes and class variables.
