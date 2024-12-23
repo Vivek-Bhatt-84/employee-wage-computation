@@ -25,3 +25,8 @@ In this use-case, the program calculates the part-time wage of an employee based
 
 ### **Use-case 4: Solve using switch case**
 - In this use-case, code is refactored and solved using `switch-case` 
+
+
+### **Use-case 5: Calculating Wages for a Month**
+In this use-case, the program calculates wages of employee for a month.
+- assuming there are `20` days in a month . Wages will be calculated accordingly .
