@@ -1,69 +1,62 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-// Function to calculate employee attenedence 
-bool markAttendence()
-{
-    srand(time(0));
-    int random = rand() % 2 ;
-    return random == 1 ;
-} 
-
-// Function to calculate  employee wage
-int calculateDailyWage(int& wagePerHr , int& workingHr) 
-{
-    return wagePerHr * workingHr ;
+// Function to calculate employee attendance
+bool markAttendance() {
+    int random = rand() % 2;
+    return random == 1;
 }
 
-
-int getRandomWorkingHours()
-{
-    return rand() % 8 + 1 ;
+// Function to calculate employee wage
+int calculateDailyWage(int wagePerHour, int workingHours) {
+    return wagePerHour * workingHours;
 }
 
+// Function to generate random working hours (1 to 8)
+int getRandomWorkingHours() {
+    return rand() % 8 + 1;
+}
 
+int main() {
+    srand(time(0)); // Seed the random number generator
+    cout << "Welcome to Employee-Wage-Computation!" << endl;
 
-int main()
-{
-    srand(time(0));
-    cout << "Welcome to Employee-Wage-computation" << endl ;
+    // Check attendance
+    int attendance = markAttendance();
 
-    // check attendence    
-    if(markAttendence()) 
-    {
-        cout << "Employee is present " << endl ; 
+    switch (attendance) {
+    case 0: // Employee is absent
+        cout << "Employee is absent." << endl;
+        break;
 
-            // calculate daily wage 
-            // calculate part time employee wage 
+    case 1: { // Employee is present
+        cout << "Employee is present." << endl;
 
-        int wagePerHr = 20 ;  // wage per hour 
-            // int workingHr = 8 ;     // working hours
+        // Calculate wage based on working hours
+        int wagePerHour = 20; // Wage per hour
         int workingHours = getRandomWorkingHours();
-    
 
-        if(workingHours > 4 ) 
-        {
-            //full time employee 
-            int dailyWage = calculateDailyWage(wagePerHr , workingHours) ;
+        switch (workingHours > 4) {
+        case 1: { // Full-time employee
+            int dailyWage = calculateDailyWage(wagePerHour, workingHours);
             cout << "Employee worked full-time for " << workingHours << " hours." << endl;
-            cout << "Daily wage of Employee is : " << dailyWage << endl ;
+            cout << "Daily wage of Employee is: " << dailyWage << endl;
+            break;
         }
-        else
-        {
-            // part time employee
-            int partTimeWage = calculateDailyWage(wagePerHr,workingHours) ;
-            cout << "Part-time employee worked for : " << workingHours << endl ;
-            cout << "Part-time wage of employee is : " << partTimeWage << endl ;
-
+        case 0: { // Part-time employee
+            int partTimeWage = calculateDailyWage(wagePerHour, workingHours);
+            cout << "Part-time employee worked for " << workingHours << " hours." << endl;
+            cout << "Part-time wage of Employee is: " << partTimeWage << endl;
+            break;
         }
+        }
+        break;
     }
 
-    else
-    {
-        cout << "Employee is absent " << endl ; 
-
+    default:
+        cout << "Invalid attendance value." << endl;
     }
- 
+
     return 0;
 }
