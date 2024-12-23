@@ -15,6 +15,11 @@ void markAttendence(){
     {
         cout << "Employee is present . " << endl ;
     }
+} 
+
+// Function to calculate daily employee wage
+int calculateDailyWage(int& wagePerHr , int& workingHr) {
+    return wagePerHr * workingHr ;
 }
 
 int main()
@@ -23,6 +28,13 @@ int main()
 
     // attendence 
     markAttendence();    
+
+    // calculate daily wage 
+    int wagePerHr = 20 ;  // wage per hour 
+    int workingHr = 8 ;     // working hours
+    int dailyWage = calculateDailyWage(wagePerHr , workingHr) ;
+
+    cout << "Daily wage of Employee is : " << dailyWage << endl ;
 
     return 0;
 }
