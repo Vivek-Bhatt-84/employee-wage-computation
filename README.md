@@ -21,3 +21,7 @@ In this use-case, the program calculates the part-time wage of an employee based
 - **Wage Per Hour**: ₹20
 - **Full Day Working Hours**: 8 hours
 - **part-time Working Hours**: < 4 hours
+
+
+### **Use-case 4: Solve using switch case**
+- In this use-case, code is refactored and solved using `switch-case` 
