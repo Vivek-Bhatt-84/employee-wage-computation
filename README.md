@@ -30,3 +30,9 @@ In this use-case, the program calculates the part-time wage of an employee based
 ### **Use-case 5: Calculating Wages for a Month**
 In this use-case, the program calculates wages of employee for a month.
 - assuming there are `20` days in a month . Wages will be calculated accordingly .
+
+
+### **Use-case 6: Calculating Wages for a Month**
+In this use-case, the program calculates wages of employee for a month based on certain conditions of days and hours.
+- Calculate Wages till a condition of total working hours or days is reached for a month .
+- Assume `100` hours and `20` days .
