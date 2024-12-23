@@ -22,6 +22,14 @@ int main() {
     srand(time(0)); // Seed the random number generator
     cout << "Welcome to Employee-Wage-Computation!" << endl;
 
+    const int wagePerHour = 20 ;
+    const int totalWorkingDays = 20 ; 
+
+    int totalWageMonth = 0 ;
+
+    for(int i = 1 ; i <= totalWorkingDays ; i++){
+
+
     // Check attendance
     int attendance = markAttendance();
 
@@ -40,12 +48,14 @@ int main() {
         switch (workingHours > 4) {
         case 1: { // Full-time employee
             int dailyWage = calculateDailyWage(wagePerHour, workingHours);
+            totalWageMonth += dailyWage ;
             cout << "Employee worked full-time for " << workingHours << " hours." << endl;
             cout << "Daily wage of Employee is: " << dailyWage << endl;
             break;
         }
         case 0: { // Part-time employee
             int partTimeWage = calculateDailyWage(wagePerHour, workingHours);
+            totalWageMonth += partTimeWage ;
             cout << "Part-time employee worked for " << workingHours << " hours." << endl;
             cout << "Part-time wage of Employee is: " << partTimeWage << endl;
             break;
@@ -57,6 +67,9 @@ int main() {
     default:
         cout << "Invalid attendance value." << endl;
     }
+    }
+
+    cout << "Total monthly wage : " << totalWageMonth << endl ;
 
     return 0;
 }
